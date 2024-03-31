@@ -13,12 +13,8 @@ depends=(gtk3 gtk-layer-shell)
 makedepends=(cargo git)
 provides=("$_pkgname")
 conflicts=("$_pkgname")
-source=("git+$url.git?signed")
+source=("git+$url.git")
 b2sums=('SKIP')
-validpgpkeys=(
-	'9EFD181455D31DD0F42DA932862BA3D7D7760F13' # Leon Kowarschick <5300871+elkowar@users.noreply.github.com>
-	'968479A1AFF927E37D1A566BB5690EEEBB952194' # GitHub (web-flow commit signing) <noreply@github.com>
-)
 
 prepare() {
 	cd $_pkgname
