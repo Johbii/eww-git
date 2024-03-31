@@ -3,13 +3,13 @@
 
 _pkgname=eww
 pkgname="$_pkgname-git"
-pkgver=0.5.0.r2.g7bfd47e
+pkgver=0.5.0.r9.g149727c
 pkgrel=1
 pkgdesc="ElKowar's wacky widgets"
 arch=(x86_64)
 url="https://github.com/elkowar/$_pkgname"
 license=(MIT)
-depends=(gtk3 gtk-layer-shell)
+depends=(gtk3 gtk-layer-shell pango gdk-pixbuf2 libdbusmenu-gtk3 cairo glib2 gcc-libs glibc)
 makedepends=(cargo git)
 provides=("$_pkgname")
 conflicts=("$_pkgname")
@@ -19,7 +19,6 @@ b2sums=('SKIP')
 prepare() {
 	cd $_pkgname
 	export RUSTUP_TOOLCHAIN=stable
-	cargo update
 	cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
 }
 
